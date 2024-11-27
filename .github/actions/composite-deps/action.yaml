@@ -1,0 +1,25 @@
+name: Custom action
+description: Set up node
+inputs:
+  node-vesion:
+    description: "Node.js version"
+    required: true
+  work-dir:
+    description: "Working directory "
+    required: true
+runs: 
+  using: "composite"
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+
+    - name: Install Dependencies
+      run: npm ci
+      working-directory: ${{ inputs.work-dir }}
+
+    - name: Run Unit Tests
+      run: npm run test
+      working-directory: ${{ inputs.work-dir }}
+
