@@ -1,7 +1,7 @@
 name: Custom action
 description: Set up node
 inputs:
-  node-vesion:
+  node-version:
     description: "Node.js version"
     required: true
   work-dir:

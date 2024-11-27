@@ -1,4 +1,4 @@
-name: Using Actions
+name:  11 Custom Actions - Composite.
 
 on: 
   workflow_dispatch:
